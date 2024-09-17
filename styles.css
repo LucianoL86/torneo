@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
@@ -5,26 +11,73 @@ body {
     padding: 0;
 }
 
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 h1 {
     text-align: center;
     color: #333;
+    margin-top: 20px;
 }
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 20px;
+    padding: 0 10px;
+}
+
+.positions, .fixture {
+    width: 100%;
+    max-width: 900px; /* Limita el ancho para que no se expanda demasiado */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.posiciones {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, td, tr {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #0979b0;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* .fixture {
+    width: 70%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
 
 .round {
     margin-bottom: 20px;
 }
 
 h2 {
-    color: #007bff;
+    color: #0979b0;
     margin-bottom: 10px;
 }
 
@@ -36,7 +89,7 @@ h2 {
     padding: 10px;
     background-color: #f0f0f5;
     border-radius: 5px;
-    border-left: 5px solid #007bff;
+    border-left: 5px solid #0979b0;
     flex-wrap: wrap;
 }
 
@@ -50,7 +103,7 @@ h2 {
     font-weight: bold;
     width: 10%;
     text-align: center;
-    color: #007bff;
+    color: #0979b0;
 }
 
 .vs {
@@ -66,56 +119,56 @@ h2 {
 }
 
 @media (max-width: 768px) {
-    .container {
-        max-width: 100%;
-        padding: 10px;
+    .main-container {
+        flex-direction: column; /* Alinea posiciones y fixture en columna */
+        padding: 0 5px; /* Añade espacio en los laterales para evitar bordes pegados */
     }
-
-    .round {
-        margin-bottom: 15px;
+    
+    .positions, .fixture {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 15px; /* Reduce el padding para pantallas más pequeñas */
     }
-
-    .matches-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-    }
-
-    .matches-grid .round:nth-child(5),
-    .matches-grid .round:nth-child(6),
-    .matches-grid .round:nth-child(7) {
-        grid-column: span 2;
-    }
-
-    .match {
-        padding: 8px;
-    }
-
-    h2 {
-        font-size: 1rem;
-        text-align: center;
+    
+    table th, td {
+        padding: 8px; /* Ajusta el padding de las celdas en pantallas pequeñas */
     }
 }
 
-/* Estilos para dispositivos pequeños */
-@media (max-width: 480px) {
-    h2 {
-        font-size: 0.9rem;
-    }
-
-    .matches-grid {
-        gap: 8px;
-    }
-
-    .match {
-        padding: 5px;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .player, .player-right, .vs, .result {
-        width: auto;
-        text-align: center;
-    }
+.fixture {
+    margin-top: 20px;
 }
 
+.round {
+    margin-bottom: 20px;
+}
+
+.match {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: #f0f0f5;
+    border-radius: 5px;
+    border-left: 5px solid #0979b0;
+    flex-wrap: wrap;
+}
+
+.player {
+    font-weight: bold;
+    width: 30%;
+    text-align: right;
+}
+
+.vs {
+    margin: 0 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.player-right {
+    text-align: left;
+    width: 30%;
+}
