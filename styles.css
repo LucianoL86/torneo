@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.round {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.match {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: #f0f0f5;
+    border-radius: 5px;
+    border-left: 5px solid #007bff;
+    flex-wrap: wrap;
+}
+
+.player {
+    font-weight: bold;
+    width: 30%;
+    text-align: right;
+}
+
+.result {
+    font-weight: bold;
+    width: 10%;
+    text-align: center;
+    color: #007bff;
+}
+
+.vs {
+    margin: 0 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.player-right {
+    text-align: left;
+    width: 30%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+        max-width: 100%; /* Ocupa el ancho completo */
+        margin: 10px; /* Un poco de margen alrededor */
+    }
+
+    .match {
+        flex-direction: column; /* Cambia la orientación de las partidas */
+        padding: 5px; /* Reduce el padding */
+    }
+
+    .player, .player-right, .result, .vs {
+        width: 100%; /* Cada elemento ocupa toda la fila */
+        text-align: center; /* Centra el texto */
+        margin-bottom: 5px; /* Añade un poco de espacio entre filas */
+    }
+
+    .vs {
+        margin: 0; /* Elimina el margen lateral en pantallas pequeñas */
+    }
+}
+
