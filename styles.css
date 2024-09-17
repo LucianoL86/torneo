@@ -67,24 +67,55 @@ h2 {
 
 @media (max-width: 768px) {
     .container {
+        max-width: 100%;
         padding: 10px;
-        max-width: 100%; /* Ocupa el ancho completo */
-        margin: 10px; /* Un poco de margen alrededor */
+    }
+
+    .round {
+        margin-bottom: 15px;
+    }
+
+    .matches-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .matches-grid .round:nth-child(5),
+    .matches-grid .round:nth-child(6),
+    .matches-grid .round:nth-child(7) {
+        grid-column: span 2;
     }
 
     .match {
-        flex-direction: column; /* Cambia la orientación de las partidas */
-        padding: 5px; /* Reduce el padding */
+        padding: 8px;
     }
 
-    .player, .player-right, .result, .vs {
-        width: 100%; /* Cada elemento ocupa toda la fila */
-        text-align: center; /* Centra el texto */
-        margin-bottom: 5px; /* Añade un poco de espacio entre filas */
+    h2 {
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 0.9rem;
     }
 
-    .vs {
-        margin: 0; /* Elimina el margen lateral en pantallas pequeñas */
+    .matches-grid {
+        gap: 8px;
+    }
+
+    .match {
+        padding: 5px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .player, .player-right, .vs, .result {
+        width: auto;
+        text-align: center;
     }
 }
 
